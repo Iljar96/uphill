@@ -1650,6 +1650,7 @@ li:nth-child(3) .estimate__icon {
 
 /* Stages */
 .stages {
+  margin-bottom: 179px;
   background-color: #4f8ac1;
 }
 .stages__container {
@@ -1764,6 +1765,78 @@ li:nth-child(3) .estimate__icon {
   height: 100%;
   top: 0;
   left: 0;
+}
+
+/* About */
+.about__title {
+  margin-bottom: 76px;
+}
+.about__wrapper {
+  display: flex;
+}
+.about__col-left {
+  width: 50%;
+}
+.about__card {
+  padding: 27px 100px 20px 57px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  color: #fff;
+  background-color: rgba(67, 133, 194, 0.9);
+}
+.about__name {
+  font-size: 26px;
+  line-height: 130.7692307692%;
+  font-weight: 700;
+}
+.about__prof {
+  font-size: 14px;
+  line-height: 242.8571428571%;
+  font-weight: 300;
+}
+.about__col-right {
+  width: 50%;
+  padding: 17px 0 73px 74px;
+}
+.about__subtitle {
+  margin-bottom: 66px;
+  font-size: 26px;
+  line-height: 130.7692307692%;
+  font-weight: 700;
+}
+.about__info blockquote {
+  margin-bottom: 63px;
+  font-size: 22px;
+  line-height: 140.9090909091%;
+  font-weight: 300;
+  font-style: italic;
+  color: #276095;
+}
+.about__info blockquote::before {
+  content: "";
+  display: block;
+  width: 53px;
+  height: 37px;
+  margin-bottom: 38px;
+  background: url("../img/icons/left_quote.png") 0 0 no-repeat;
+  background-size: contain;
+}
+.about__info ul li {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  line-height: 205.5555555556%;
+  font-weight: 300;
+}
+.about__info ul li::before {
+  content: "";
+  display: block;
+  width: 9px;
+  height: 9px;
+  margin-right: 25px;
+  background: #ee7100;
 }
 
 .page {

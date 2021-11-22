@@ -503,6 +503,7 @@
 
 /* Stages */
 .stages {
+	margin-bottom: 179px;
 	background-color: #4f8ac1;
 	// .stages__container
 	&__container {
@@ -626,5 +627,95 @@
 		height: 100%;
 		top: 0;
 		left: 0;
+	}
+}
+
+/* About */
+.about {
+	// .about__container
+	&__container {
+	}
+	// .about__title
+	&__title {
+		margin-bottom: 76px;
+	}
+	// .about__wrapper
+	&__wrapper {
+		display: flex;
+	}
+	// .about__col-left
+	&__col-left {
+		width: 50%;
+	}
+	// .about__card
+	&__card {
+		padding: 27px 100px 20px 57px;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		z-index: 1;
+		color: #fff;
+		background-color: rgb(67, 133, 194, 0.9);
+	}
+	// .about__name
+	&__name {
+		font-size: 26px;
+		line-height: 34/26 * 100%;
+		font-weight: 700;
+	}
+	// .about__prof
+	&__prof {
+		font-size: 14px;
+		line-height: 34 / 14 * 100%;
+		font-weight: 300;
+	}
+	// .about__col-right
+	&__col-right {
+		width: 50%;
+		padding: 17px 0 73px 74px;
+	}
+	// .about__subtitle
+	&__subtitle {
+		margin-bottom: 66px;
+		font-size: 26px;
+		line-height: 34 / 26 * 100%;
+		font-weight: 700;
+	}
+	// .about__info
+	&__info {
+		blockquote {
+			margin-bottom: 63px;
+			font-size: 22px;
+			line-height: 31 / 22 * 100%;
+			font-weight: 300;
+			font-style: italic;
+			color: #276095;
+			&::before {
+				content: "";
+				display: block;
+				width: 53px;
+				height: 37px;
+				margin-bottom: 38px;
+				background: url("../img/icons/left_quote.png") 0 0 no-repeat;
+				background-size: contain;
+			}
+		}
+		ul {
+			li {
+				display: flex;
+				align-items: center;
+				font-size: 18px;
+				line-height: 37 / 18 * 100%;
+				font-weight: 300;
+				&::before {
+					content: "";
+					display: block;
+					width: 9px;
+					height: 9px;
+					margin-right: 25px;
+					background: #ee7100;
+				}
+			}
+		}
 	}
 }
