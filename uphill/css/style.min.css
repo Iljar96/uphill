@@ -545,7 +545,7 @@ textarea.input {
   transition: all 0.3s ease 0s;
 }
 @media (min-width: 991.98px) {
-  ._underline:hover ._underline::after {
+  ._underline:hover::after {
     opacity: 0;
     visibility: hidden;
   }
@@ -1699,7 +1699,7 @@ li:nth-child(3) .estimate__icon {
   transform: translate(0px, -50%);
   opacity: 0;
   visibility: hidden;
-  transition: all 0.3s ease 0.2s;
+  transition: all 0.3s ease 0.1s;
 }
 .stages__navitem._active {
   background-color: #5f9ed8;
