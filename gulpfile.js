@@ -55,7 +55,7 @@ let path = {
 };
 
 // Пишем папки которые нужно копировать через запятую
-let foldersArray = ['videos']; // 'videos', 'files' ...
+let foldersArray = ['videos', 'files']; // 'videos', 'files' ...
 function copyFolders() {
 	foldersArray.forEach(folderItem => {
 		src(src_folder + "/" + folderItem + "/**/*.*", {})
