@@ -58,22 +58,30 @@
 	&__body {
 		transform: scale(0);
 		transition: all 0.3s ease 0s;
-		background-color: #fff;
-		padding: 50px;
+		background-color: #ebeef4;
+		padding: 117px 65px 115px;
 		width: 100%;
-		max-width: 800px;
+		max-width: 550px;
+	}
+	.proposal-content {
+		width: 100%;
+		padding: 0;
 	}
 	// .popup__close
 	&__close {
 		width: 15px;
 		height: 15px;
 		position: absolute;
-		top: 0px;
-		right: 0px;
+		top: 37px;
+		right: 44px;
 		cursor: pointer;
 		z-index: 30;
 		background: url("../img/icons/close.svg") 0 0 no-repeat;
+		background-size: contain;
 	}
+}
+.popup_feedback .proposal-content__title {
+	margin-bottom: 42px;
 }
 //====================================================================================================
 //====================================================================================================
