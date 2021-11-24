@@ -4,14 +4,15 @@
 			<div class="proposal-content">
 				<h3 class="proposal-content__title">Получить анализ</h3>
 				<ul class="proposal-content__nav">
-					<li class="_active">Whatsapp</li>
-					<li>Telegram</li>
-					<li data-type="email">E-mail</li>
-					<li>Телефон</li>
+					<li data-msg="Введите номер телефона" class="_active">Whatsapp</li>
+					<li data-msg="Введите номер телефона">Telegram</li>
+					<li data-type="email" data-msg="Введите валидный email">E-mail</li>
+					<li data-msg="Введите номер телефона">Телефон</li>
 				</ul>
 				<form class="proposal-content__form form">
 					<div class="proposal-content__input">
-						<input data-val type="text" name="contacts" class="input _req" placeholder="Введите номер телефона">
+						<input data-val type="text" name="contacts" class="input _req _phone" data-error="Введите номер телефона"
+							placeholder="Введите номер телефона">
 					</div>
 					<div class="proposal-content__btn-wrapper">
 						<button type="submit" class="btn">Получить анализ</button>

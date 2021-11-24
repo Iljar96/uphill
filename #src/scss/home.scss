@@ -322,7 +322,20 @@
 }
 #question4 {
 	.questions-quiz__item {
-		min-height: 133px;
+		height: 133px;
+		display: inline-block;
+		line-height: 133px;
+		padding-top: 0;
+		padding-bottom: 0;
+		> div {
+			display: inline-block;
+			vertical-align: middle;
+			line-height: 1.4;
+		}
+		@media (max-width: $md3) {
+			height: 100px;
+			line-height: 100px;
+		}
 	}
 }
 
@@ -415,21 +428,22 @@
 				white-space: nowrap;
 			}
 		}
-	}
-	// .estimate__icon
-	&__icon {
-		// margin-right: 29px;
-		// max-height: 55px;
-		width: auto;
-		@include adaptiv-value("max-height", 55, 44, 1);
-		@include adaptiv-value-to("margin-right", 29, 20, 1280);
-		@media (max-width: $md0) {
-			@include adaptiv-value-to("margin-right", 29, 24, 0);
+		// .estimate__icon
+		img {
+			// margin-right: 29px;
+			// max-height: 55px;
+			width: auto;
+			@include adaptiv-value("max-height", 55, 44, 1);
+			@include adaptiv-value-to("margin-right", 29, 20, 1280);
+			@media (max-width: $md0) {
+				@include adaptiv-value-to("margin-right", 29, 24, 0);
+			}
+			li:nth-child(3) & {
+				margin-right: 24px;
+			}
 		}
-		li:nth-child(3) & {
-			margin-right: 24px;
-		}
 	}
+
 	// .estimate__info
 	&__info {
 		display: flex;
@@ -1319,26 +1333,29 @@
 		margin-bottom: 95px;
 	}
 	@include adaptiv-value-to("margin-bottom", 167, 120, 1280);
-	&::before {
-		content: "";
-		position: absolute;
-		width: 5.89%;
-		height: 7.3%;
-		top: 31.9%;
-		left: 0;
-		background: url("../img/icons/decor_4.png") 0 0 no-repeat;
-		background-size: contain;
+	@media (min-width: $md0) {
+		&::before {
+			content: "";
+			position: absolute;
+			width: 5.89%;
+			height: 7.3%;
+			top: 31.9%;
+			left: 0;
+			background: url("../img/icons/decor_4.png") 0 0 no-repeat;
+			background-size: contain;
+		}
+		&::after {
+			content: "";
+			position: absolute;
+			width: 5.53%;
+			height: 17.4%;
+			top: 48.3%;
+			right: 0;
+			background: url("../img/icons/decor_5.png") 0 0 no-repeat;
+			background-size: contain;
+		}
 	}
-	&::after {
-		content: "";
-		position: absolute;
-		width: 5.53%;
-		height: 17.4%;
-		top: 48.3%;
-		right: 0;
-		background: url("../img/icons/decor_5.png") 0 0 no-repeat;
-		background-size: contain;
-	}
+
 	// .about__container
 	&__container {
 	}
@@ -2052,15 +2069,17 @@
 	@media (max-width: $md3) {
 		margin-bottom: 115px;
 	}
-	&::after {
-		content: "";
-		position: absolute;
-		width: 5.834%;
-		height: 49.5%;
-		top: 15.3%;
-		right: 3.5%;
-		background: url("../img/icons/decor_7.png") 0 0 no-repeat;
-		background-size: contain;
+	@media (min-width: $md0) {
+		&::after {
+			content: "";
+			position: absolute;
+			width: 5.834%;
+			height: 49.5%;
+			top: 15.3%;
+			right: 3.5%;
+			background: url("../img/icons/decor_7.png") 0 0 no-repeat;
+			background-size: contain;
+		}
 	}
 	// .guarantee__container
 	&__container {
@@ -2223,6 +2242,11 @@
 		padding-right: 80px;
 		max-width: 533px;
 		margin-left: auto;
+		@media (max-width: $md2) {
+			// max-width: 100%;
+			margin-right: auto;
+			padding: 0;
+		}
 	}
 	.proposal-content__btn-wrapper .btn {
 		padding-left: 65px;
@@ -2305,6 +2329,7 @@
 	&__input {
 		width: 100%;
 		margin-bottom: 26px;
+		position: relative;
 		@media (max-width: $md3) {
 			margin-bottom: 16px;
 		}

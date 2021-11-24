@@ -103,7 +103,6 @@ setTimeout(function () {
 }, 100);
 
 function scroll_lazy(scr_item) {
-	/*
 	let lazy_src = scr_item.querySelectorAll('*[data-src]');
 	if (lazy_src.length > 0) {
 		for (let index = 0; index < lazy_src.length; index++) {
@@ -124,7 +123,6 @@ function scroll_lazy(scr_item) {
 			}
 		}
 	}
-	*/
 	/*
 	window.onload = () => {
 		const observer = new IntersectionObserver((entries, observer) => {

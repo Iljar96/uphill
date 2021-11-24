@@ -39,11 +39,18 @@ window.onload = function () {
 				e.target.closest('ul').querySelectorAll('li').forEach(el => el.classList.remove('_active'));
 				e.target.classList.add('_active');
 
+				input.classList.remove('_phone', '_email');
 
 				if (e.target.getAttribute('data-type') === 'email') {
+					input.classList.add('_email');
+
 					input.setAttribute('placeholder', emailText);
+					input.setAttribute('data-error', e.target.getAttribute('data-msg'));
 				} else {
+					input.classList.add('_phone');
+
 					input.setAttribute('placeholder', phoneText);
+					input.setAttribute('data-error', e.target.getAttribute('data-msg'));
 				}
 			}
 		});
@@ -82,5 +89,5 @@ window.onload = function () {
 		map.geoObjects.add(placemark);
 	}
 
-	ymaps.ready(init);
+	// ymaps.ready(init);
 }
