@@ -20,17 +20,26 @@
 
 .btn {
 	display: inline-block;
-	padding: 28px 45px 22px;
-	font-size: 20px;
+	// padding: 28px 45px 22px;
+	// font-size: 20px;
 	line-height: 1;
 	font-weight: 700;
 	color: #ffffff;
 	background-color: #ee7100;
 	transition: background-color 0.3s ease 0s;
+	@include adaptiv-value("font-size", 20, 16, 1);
+	@include adaptiv-value("padding-top", 28, 18, 1);
+	@include adaptiv-value("padding-bottom", 22, 17, 1);
+	@include adaptiv-value("padding-left", 45, 20, 1);
+	@include adaptiv-value("padding-right", 45, 20, 1);
 	@media (min-width: $md2) {
 		&:hover {
 			background-color: #d36502;
 		}
+	}
+	@media (min-width: $md3) and (max-width: $md2) {
+		padding: 28px 45px 22px;
+		font-size: 20px;
 	}
 	&--search {
 		display: inline-flex;
@@ -40,11 +49,14 @@
 		&::before {
 			content: "";
 			display: block;
-			width: 22px;
-			height: 22px;
-			margin-right: 26px;
+			// width: 22px;
+			// height: 22px;
+			// margin-right: 26px;
 			background: url("../img/icons/search.png") 0 0 no-repeat;
 			background-size: contain;
+			@include adaptiv-value("width", 22, 16, 1);
+			@include adaptiv-value("height", 22, 16, 1);
+			@include adaptiv-value("margin-right", 26, 16, 1);
 		}
 	}
 }
@@ -70,15 +82,41 @@
 	}
 }
 
-.subtitle {
+.suptitle {
 	font-size: 37px;
 	font-weight: 300;
+	@include adaptiv-value("font-size", 37, 18, 1);
+	@media (min-width: $md3) and (max-width: $md2) {
+		font-size: 32px;
+	}
 }
 .title {
-	font-size: 56px;
-	line-height: 67 / 56 * 100%;
+	// font-size: 56px;
+	// line-height: 67 / 56 * 100%;
 	font-weight: 700;
 	letter-spacing: -0.003em;
+	@include adaptiv-value("line-height", 67, 34, 1);
+	@include adaptiv-value-to("font-size", 56, 37, 1280);
+	@media (max-width: $md0) {
+		@include adaptiv-value("font-size", 56, 32, 0);
+	}
+	@media (min-width: $md3) and (max-width: $md2) {
+		font-size: 48px;
+		line-height: 60px;
+	}
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.fade-in {
+	animation: fadeIn ease 1s;
 }
 //</ОСНОВНОЙ БЛОК>====================================================================================================
 

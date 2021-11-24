@@ -62,6 +62,9 @@
 		padding: 117px 65px 115px;
 		width: 100%;
 		max-width: 550px;
+		@media (max-width: $md4) {
+			padding: 77px 15px 45px;
+		}
 	}
 	.proposal-content {
 		width: 100%;
