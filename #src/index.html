@@ -118,12 +118,13 @@
 									<ul class="proposal-content__nav">
 										<li class="_active">Whatsapp</li>
 										<li>Telegram</li>
-										<li>E-mail</li>
+										<li data-type="email">E-mail</li>
 										<li>Телефон</li>
 									</ul>
 									<form class="proposal-content__form form">
 										<div class="proposal-content__input">
-											<input type="text" name="contacts" class="input" placeholder="Введите номер телефона">
+											<input data-val type="text" name="contacts" class="input _req"
+												placeholder="Введите номер телефона">
 										</div>
 										<div class="proposal-content__btn-wrapper">
 											<button type="submit" class="btn">Получить расчет</button>
@@ -787,12 +788,13 @@
 						<ul class="proposal-content__nav">
 							<li class="_active">Whatsapp</li>
 							<li>Telegram</li>
-							<li>E-mail</li>
+							<li data-type="email">E-mail</li>
 							<li>Телефон</li>
 						</ul>
 						<form class="proposal-content__form form">
 							<div class="proposal-content__input">
-								<input type="text" name="contacts" class="input" placeholder="Введите номер телефона">
+								<input data-val type="text" name="contacts" class="input _req _phone" data-error="Ошибка"
+									placeholder="Введите номер телефона">
 							</div>
 							<div class="proposal-content__btn-wrapper">
 								<button type="submit" class="btn">Получить предложение</button>
@@ -855,7 +857,8 @@
 						<div class="contacts__col address">
 							<p>г. Москва Б. Дровяной пер.,
 								дом 20, стр. 2, 3-й этаж</p>
-							<div class="address__path">Проложить маршрут</div>
+							<a href="https://yandex.ru/maps/?rtext=~55.746294,37.659030" class="address__path"
+								target="_blank">Проложить маршрут</a>
 						</div>
 					</div>
 

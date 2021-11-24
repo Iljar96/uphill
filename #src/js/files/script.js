@@ -2,6 +2,7 @@ window.onload = function () {
 	document.querySelectorAll('._hidden')
 		.forEach(item => item.classList.remove('_hidden'));
 
+	//Tabs line
 	const navLine = document.querySelector('.documents__line'),
 		navItem = document.querySelectorAll('.documents__navitem');
 
@@ -25,4 +26,61 @@ window.onload = function () {
 			});
 		});
 	}
+
+	const formItems = document.querySelectorAll('.proposal-content__nav');
+	const phoneText = 'Введите номер телефона';
+	const emailText = 'Введите email';
+
+	formItems.forEach(el => {
+		el.addEventListener('click', (e) => {
+			if (e.target.closest('.proposal-content__nav li')) {
+				const input = e.target.closest('.proposal-content').querySelector('input[data-val]');
+
+				e.target.closest('ul').querySelectorAll('li').forEach(el => el.classList.remove('_active'));
+				e.target.classList.add('_active');
+
+
+				if (e.target.getAttribute('data-type') === 'email') {
+					input.setAttribute('placeholder', emailText);
+				} else {
+					input.setAttribute('placeholder', phoneText);
+				}
+			}
+		});
+	})
+
+	let center = [55.746294, 37.659030];
+	let markerWidth = 79;
+	let markerHeight = 100;
+	if (window.matchMedia("(max-width: 1440.98px)").matches) {
+		markerWidth = 40;
+		markerHeight = 51;
+	}
+
+	function init() {
+		let map = new ymaps.Map('map', {
+			center: center,
+			zoom: 17
+		});
+
+		let placemark = new ymaps.Placemark(center, {}, {
+			iconLayout: 'default#image',
+			iconImageHref: '../img/icons/location.png',
+			iconImageSize: [markerWidth, markerHeight],
+			// iconImageOffset: [-19, -55]
+		});
+
+		map.controls.remove('geolocationControl'); // удаляем геолокацию
+		map.controls.remove('searchControl'); // удаляем поиск
+		map.controls.remove('trafficControl'); // удаляем контроль трафика
+		map.controls.remove('typeSelector'); // удаляем тип
+		map.controls.remove('fullscreenControl'); // удаляем кнопку перехода в полноэкранный режим
+		map.controls.remove('zoomControl'); // удаляем контрол зуммирования
+		map.controls.remove('rulerControl'); // удаляем контрол правил
+		// map.behaviors.disable(['scrollZoom']); // отключаем скролл карты (опционально)
+
+		map.geoObjects.add(placemark);
+	}
+
+	ymaps.ready(init);
 }

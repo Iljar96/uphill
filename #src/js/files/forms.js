@@ -349,7 +349,6 @@ function selects_update_all() {
 //Placeholers
 let inputs = document.querySelectorAll('input[data-value],textarea[data-value]');
 inputs_init(inputs);
-
 function inputs_init(inputs) {
 	if (inputs.length > 0) {
 		for (let index = 0; index < inputs.length; index++) {
@@ -387,18 +386,26 @@ function inputs_init(inputs) {
 					*/
 				}
 				if (input.classList.contains('_phone')) {
+					// const numInputs = document.querySelectorAll('._phone');
+					// numInputs.forEach(item => {
+					// 	item.addEventListener('input', () => {
+					// 		item.value = item.value.replace(/\D/, '');
+					// 	});
+					// });
+
+
 					//'+7(999) 999 9999'
 					//'+38(999) 999 9999'
 					//'+375(99)999-99-99'
-					input.classList.add('_mask');
-					Inputmask("+375 (99) 9999999", {
-						//"placeholder": '',
-						clearIncomplete: true,
-						clearMaskOnLostFocus: true,
-						onincomplete: function () {
-							input_clear_mask(input, input_g_value);
-						}
-					}).mask(input);
+					// input.classList.add('_mask');
+					// Inputmask("+375 (99) 9999999", {
+					// 	//"placeholder": '',
+					// 	clearIncomplete: true,
+					// 	clearMaskOnLostFocus: true,
+					// 	onincomplete: function () {
+					// 		input_clear_mask(input, input_g_value);
+					// 	}
+					// }).mask(input);
 				}
 				if (input.classList.contains('_digital')) {
 					input.classList.add('_mask');

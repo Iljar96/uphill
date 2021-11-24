@@ -1221,9 +1221,11 @@
 			margin-left: 15px;
 			background: url("../img/icons/arrow_bottom_white.png") 0 0 no-repeat;
 			background-size: contain;
-			transition: transform 0.3s ease 0.3s;
+			transition: transform 0.3s ease 0s;
+			transform-origin: center;
 			@media (max-width: $md3) {
 				min-width: 17px;
+				width: 17px;
 				height: 9px;
 				margin-left: 10px;
 			}
@@ -2425,10 +2427,8 @@
 		margin-bottom: 76px;
 	}
 	@media (max-width: $md3) {
+		flex-direction: column;
 		margin-bottom: 50px;
-	}
-	@media (max-width: $md3) {
-		flex-wrap: wrap;
 	}
 	&__left-col {
 		display: flex;
