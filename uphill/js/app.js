@@ -40538,87 +40538,14 @@ if (forms.length > 0) {
   }
 }
 
-function form_submit(_x3) {
-  return _form_submit.apply(this, arguments);
-}
+function form_submit(e) {
+  var btn = e.target;
+  var form = btn.closest('form');
+  var error = form_validate(form);
 
-function _form_submit() {
-  _form_submit = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(e) {
-    var btn, form, error, formAction, formMethod, message, ajax, formData, response, result;
-    return regeneratorRuntime.wrap(function _callee2$(_context2) {
-      while (1) {
-        switch (_context2.prev = _context2.next) {
-          case 0:
-            btn = e.target;
-            form = btn.closest('form');
-            error = form_validate(form);
-
-            if (!(error == 0)) {
-              _context2.next = 28;
-              break;
-            }
-
-            formAction = form.getAttribute('action') ? form.getAttribute('action').trim() : '#';
-            formMethod = form.getAttribute('method') ? form.getAttribute('method').trim() : 'GET';
-            message = form.getAttribute('data-message');
-            ajax = form.getAttribute('data-ajax'); //SendForm
-
-            if (!ajax) {
-              _context2.next = 26;
-              break;
-            }
-
-            e.preventDefault();
-            formData = new FormData(form);
-            form.classList.add('_sending');
-            _context2.next = 14;
-            return fetch(formAction, {
-              method: formMethod,
-              body: formData
-            });
-
-          case 14:
-            response = _context2.sent;
-
-            if (!response.ok) {
-              _context2.next = 24;
-              break;
-            }
-
-            _context2.next = 18;
-            return response.json();
-
-          case 18:
-            result = _context2.sent;
-            form.classList.remove('_sending');
-
-            if (message) {
-              popup_open(message + '-message');
-            }
-
-            form_clean(form);
-            _context2.next = 26;
-            break;
-
-          case 24:
-            alert("Ошибка");
-            form.classList.remove('_sending');
-
-          case 26:
-            _context2.next = 29;
-            break;
-
-          case 28:
-            e.preventDefault();
-
-          case 29:
-          case "end":
-            return _context2.stop();
-        }
-      }
-    }, _callee2);
-  }));
-  return _form_submit.apply(this, arguments);
+  if (error !== 0) {
+    e.preventDefault();
+  }
 }
 
 function form_validate(form) {

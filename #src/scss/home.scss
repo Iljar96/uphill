@@ -3,6 +3,9 @@
 	// .intro__container
 	&__container {
 		padding-right: 0;
+		@media (max-width: $md0) {
+			padding-right: 0;
+		}
 		@media (max-width: $md2) {
 			padding-right: 23px;
 		}
@@ -24,6 +27,9 @@
 		padding-right: 60px;
 		@include adaptiv-value-to("padding-top", 264, 170, 1280);
 		@media (max-width: $md0) {
+			@include adaptiv-value-to("padding-top", 264, 140, 992);
+		}
+		@media (max-width: $md2) {
 			@include adaptiv-value("padding-top", 264, 113, 0);
 		}
 		@media (max-width: $md2) {
@@ -45,14 +51,21 @@
 		@include adaptiv-value("line-height", 69, 34, 1);
 		@include adaptiv-value-to("margin-bottom", 53, 32, 1280);
 		@media (max-width: $md0) {
+			br {
+				display: none;
+			}
+		}
+		@media (min-width: $md2) and (max-width: $md0) {
+			line-height: 1.2;
+			@include adaptiv-value-to("font-size", 56, 31, 992);
+			@include adaptiv-value-to("margin-bottom", 53, 25, 992);
+		}
+		@media (max-width: $md2) {
 			@include adaptiv-value("margin-bottom", 53, 27, 0);
 			@include adaptiv-value("font-size", 56, 32, 0);
 		}
 		@media (max-width: $md2) {
 			max-width: 625px;
-			br {
-				display: none;
-			}
 		}
 		@media (min-width: $md3) and (max-width: $md2) {
 			margin-bottom: 25px;
@@ -70,7 +83,12 @@
 		@include adaptiv-value-to("font-size", 37, 25, 1280);
 		@include adaptiv-value("line-height", 38, 21, 1);
 		@include adaptiv-value-to("margin-bottom", 94, 55, 1280);
-		@media (max-width: $md0) {
+		@media (min-width: $md2) and (max-width: $md0) {
+			line-height: 1.2;
+			@include adaptiv-value-to("font-size", 37, 23, 992);
+			@include adaptiv-value-to("margin-bottom", 94, 20, 992);
+		}
+		@media (max-width: $md2) {
 			@include adaptiv-value("margin-bottom", 94, 33, 0);
 			@include adaptiv-value("font-size", 37, 16, 0);
 		}
@@ -88,6 +106,9 @@
 		height: 0;
 		padding: 0 0 57.569%;
 		overflow: hidden;
+		@media (max-width: $md0) {
+			padding: 0 0 47.569%;
+		}
 		@media (max-width: $md2) {
 			width: 100vw;
 			flex: 0 0 100vw;
@@ -95,16 +116,20 @@
 			padding: 0 0 99.369%;
 		}
 		@media (max-width: $md3) {
-			padding: 0 0 106.869%;
+			padding: 0 0 99.7%;
 		}
 		@media (max-width: $md4) {
 			margin-left: -15px;
 		}
 	}
+
 	@media (min-width: 1201px) {
-		.ie & .intro__slider #lottie {
+		.ie & ._container {
 			width: 100%;
-			@include adaptiv-value-to("height", 900, 598.5, 1201);
+		}
+		.ie & .intro__slider #lottie-slider {
+			width: 100%;
+			@include adaptiv-value-to("height", 900, 598.5, 1280);
 		}
 	}
 }

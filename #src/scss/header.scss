@@ -5,7 +5,10 @@
 	left: 0;
 	z-index: 10;
 	@include adaptiv-value("top", 60, 28, 1);
-	@media (min-width: $md3) and (max-width: $md0) {
+	@media (min-width: $md2) and (max-width: $md0) {
+		top: 48px;
+	}
+	@media (min-width: $md3) and (max-width: $md2) {
 		top: 68px;
 	}
 	// .header__container
