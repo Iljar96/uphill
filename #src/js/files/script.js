@@ -72,7 +72,7 @@ window.onload = function () {
 
 		let placemark = new ymaps.Placemark(center, {}, {
 			iconLayout: 'default#image',
-			iconImageHref: '../img/icons/location.png',
+			iconImageHref: 'img/icons/location.png',
 			iconImageSize: [markerWidth, markerHeight],
 			// iconImageOffset: [-19, -55]
 		});
@@ -89,5 +89,5 @@ window.onload = function () {
 		map.geoObjects.add(placemark);
 	}
 
-	// ymaps.ready(init);
+	ymaps.ready(init);
 }

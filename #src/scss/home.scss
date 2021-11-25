@@ -82,7 +82,7 @@
 	// .intro__slider
 	&__slider {
 		flex: 0 0 50vw;
-		background: red;
+		// background: red;
 		max-width: 961px;
 		width: 100%;
 		height: 0;
@@ -99,6 +99,12 @@
 		}
 		@media (max-width: $md4) {
 			margin-left: -15px;
+		}
+	}
+	@media (min-width: 1201px) {
+		.ie & .intro__slider #lottie {
+			width: 100%;
+			@include adaptiv-value-to("height", 900, 598.5, 1201);
 		}
 	}
 }
@@ -185,6 +191,15 @@
 	line-height: 36 / 26 * 100%;
 	font-weight: 300;
 	color: #ffffff;
+
+	@include adaptiv-value-to("padding-left", 54, 20, 1280);
+	@include adaptiv-value-to("padding-right", 75, 20, 1280);
+	@include adaptiv-value-to("font-size", 26, 22, 1280);
+	@media (max-width: $md0) {
+		@include adaptiv-value-to("padding-left", 54, 20, 992);
+		@include adaptiv-value-to("padding-right", 75, 20, 992);
+		@include adaptiv-value-to("font-size", 26, 22, 992);
+	}
 }
 
 #quiz__left img {
@@ -198,6 +213,7 @@
 	width: 100%;
 	height: 600px;
 	overflow: hidden;
+	@include adaptiv-value-to("height", 600, 500, 1280);
 }
 
 #quiz__right {
@@ -208,7 +224,12 @@
 	// padding-top: 5%;
 	background-color: #fff;
 	transition: all 1s ease-in-out;
-	@include adaptiv-value("padding-top", 96, 67, 1);
+	@include adaptiv-value-to("padding-top", 96, 40, 1280);
+	@include adaptiv-value-to("padding-left", 104, 40, 1280);
+	@include adaptiv-value-to("height", 600, 500, 1280);
+	@media (max-width: $md0) {
+		@include adaptiv-value("padding-top", 96, 67, 0);
+	}
 	@media (max-width: $md2) {
 		width: 100%;
 		height: auto;
@@ -273,11 +294,22 @@
 	margin-right: 2.3%;
 	margin-bottom: 2.3%;
 	transition: box-shadow 0.5s ease 0s;
+
+	@include adaptiv-value-to("padding-left", 42, 15, 1280);
+	@include adaptiv-value-to("padding-right", 42, 15, 1280);
 	@include adaptiv-value("padding-top", 30, 19, 1);
-	@include adaptiv-value("padding-left", 42, 33, 1);
-	@include adaptiv-value("padding-right", 42, 33, 1);
 	@include adaptiv-value("padding-bottom", 25, 13, 1);
-	@include adaptiv-value("font-size", 16, 14, 1);
+	@include adaptiv-value-to("font-size", 16, 13, 1280);
+	@media (max-width: $md0) {
+		@include adaptiv-value-to("padding-left", 42, 15, 992);
+		@include adaptiv-value-to("padding-right", 42, 15, 992);
+		@include adaptiv-value-to("font-size", 16, 13, 992);
+	}
+	@media (max-width: $md2) {
+		@include adaptiv-value("padding-left", 42, 33, 0);
+		@include adaptiv-value("padding-right", 42, 33, 0);
+		@include adaptiv-value("font-size", 16, 14, 1);
+	}
 	@media (max-width: $md2) {
 		width: 48.85%;
 		&:nth-child(2n) {

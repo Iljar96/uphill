@@ -19,23 +19,23 @@ async function form_submit(e) {
 		//SendForm
 		if (ajax) {
 			e.preventDefault();
-			// let formData = new FormData(form);
-			// form.classList.add('_sending');
-			// let response = await fetch(formAction, {
-			// 	method: formMethod,
-			// 	body: formData
-			// });
-			// if (response.ok) {
-			// 	let result = await response.json();
-			// 	form.classList.remove('_sending');
-			// 	if (message) {
-			// 		popup_open(message + '-message');
-			// 	}
-			// 	form_clean(form);
-			// } else {
-			// 	alert("Ошибка");
-			// 	form.classList.remove('_sending');
-			// }
+			let formData = new FormData(form);
+			form.classList.add('_sending');
+			let response = await fetch(formAction, {
+				method: formMethod,
+				body: formData
+			});
+			if (response.ok) {
+				let result = await response.json();
+				form.classList.remove('_sending');
+				if (message) {
+					popup_open(message + '-message');
+				}
+				form_clean(form);
+			} else {
+				alert("Ошибка");
+				form.classList.remove('_sending');
+			}
 		}
 	} else {
 		e.preventDefault();
