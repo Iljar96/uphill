@@ -89,5 +89,12 @@ window.onload = function () {
 		map.geoObjects.add(placemark);
 	}
 
-	ymaps.ready(init);
+	// ymaps.ready(init);
 }
+
+const moreBtns = document.querySelectorAll('.documents__more');
+moreBtns.forEach(el => el.addEventListener('click', () => {
+	setTimeout(function () {
+		el.remove();
+	}, 10);
+}));

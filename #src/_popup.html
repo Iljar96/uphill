@@ -1,4 +1,4 @@
-<div class="popup popup_analysis">
+<div class="popup popup_analysis _hidden">
 	<div class="popup__content">
 		<div class="popup__body">
 			<div class="proposal-content">
@@ -26,8 +26,36 @@
 		</div>
 	</div>
 </div>
+<div class="popup popup_calculation _hidden">
+	<div class="popup__content">
+		<div class="popup__body">
+			<div class="proposal-content">
+				<h3 class="proposal-content__title">Получить расчет</h3>
+				<ul class="proposal-content__nav">
+					<li data-msg="Введите номер телефона" class="_active">Whatsapp</li>
+					<li data-msg="Введите номер телефона">Telegram</li>
+					<li data-type="email" data-msg="Введите валидный email">E-mail</li>
+					<li data-msg="Введите номер телефона">Телефон</li>
+				</ul>
+				<form class="proposal-content__form form">
+					<div class="proposal-content__input">
+						<input data-val type="text" name="contacts" class="input _req _phone" data-error="Введите номер телефона"
+							placeholder="Введите номер телефона">
+					</div>
+					<div class="proposal-content__btn-wrapper">
+						<button type="submit" class="btn">Получить расчет</button>
+					</div>
 
-<div class="popup popup_callback">
+					<p>Отправляя форму выше, вы соглашаетесь
+						с <a href="#">политикой конфиденциальности</a></p>
+				</form>
+			</div>
+			<div class="popup__close"></div>
+		</div>
+	</div>
+</div>
+
+<div class="popup popup_callback _hidden">
 	<div class="popup__content">
 		<div class="popup__body">
 			<div class="proposal-content">
@@ -50,7 +78,7 @@
 </div>
 
 
-<div class="popup popup_feedback">
+<div class="popup popup_feedback _hidden">
 	<div class="popup__content">
 		<div class="popup__body">
 			<div class="proposal-content">

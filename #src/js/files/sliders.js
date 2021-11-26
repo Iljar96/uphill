@@ -153,7 +153,7 @@ let sliderTeam = new Swiper('.about__slider', {
 		},
 		992: {
 			slidesPerView: 4,
-			spaceBetween: 32,
+			spaceBetween: '3%',
 		},
 	},
 	on: {
@@ -220,10 +220,10 @@ if (window.matchMedia("(max-width: 1279.98px)").matches) {
 }
 
 window.addEventListener('resize', function (e) {
-	if (window.matchMedia("(max-width: 1280.98px)").matches && !sliderProductInit) {
+	if (window.matchMedia("(max-width: 1259.98px)").matches && !sliderProductInit) {
 		sliderInit();
 		sliderProductInit = true;
-	} else if (window.matchMedia("(min-width: 1279.98px)").matches && sliderProductInit) {
+	} else if (window.matchMedia("(min-width: 1259.98px)").matches && sliderProductInit) {
 		sliderProductInit = false;
 		for (let i = 0; i < sliderCertificate.length; i++) {
 			sliderCertificate[i].destroy(true, true);

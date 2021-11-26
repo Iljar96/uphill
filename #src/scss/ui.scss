@@ -27,11 +27,25 @@
 	color: #ffffff;
 	background-color: #ee7100;
 	transition: background-color 0.3s ease 0s;
-	@include adaptiv-value("font-size", 20, 16, 1);
-	@include adaptiv-value("padding-top", 28, 18, 1);
-	@include adaptiv-value("padding-bottom", 22, 17, 1);
-	@include adaptiv-value("padding-left", 45, 20, 1);
-	@include adaptiv-value("padding-right", 45, 20, 1);
+
+	padding-top: 17px;
+	padding-bottom: 16px;
+	padding-left: 31px;
+	padding-right: 28px;
+
+	@include adaptiv-value-to("font-size", 20, 13, 1260);
+	@include adaptiv-value-to("padding-top", 28, 17, 1260);
+	@include adaptiv-value-to("padding-bottom", 22, 16, 1260);
+	@include adaptiv-value-to("padding-left", 45, 28, 1260);
+	@include adaptiv-value-to("padding-right", 45, 28, 1260);
+
+	@media (max-width: $md0) {
+		@include adaptiv-value("font-size", 20, 16, 0);
+		@include adaptiv-value("padding-top", 28, 18, 0);
+		@include adaptiv-value("padding-bottom", 22, 17, 0);
+		@include adaptiv-value("padding-left", 45, 20, 0);
+		@include adaptiv-value("padding-right", 45, 20, 0);
+	}
 	@media (min-width: $md2) {
 		&:hover {
 			background-color: #d36502;
@@ -85,7 +99,10 @@
 .suptitle {
 	font-size: 37px;
 	font-weight: 300;
-	@include adaptiv-value("font-size", 37, 18, 1);
+	@include adaptiv-value-to("font-size", 37, 24, 1260);
+	@media (max-width: $md0) {
+		@include adaptiv-value("font-size", 37, 18, 1);
+	}
 	@media (min-width: $md3) and (max-width: $md2) {
 		font-size: 32px;
 	}
@@ -96,7 +113,7 @@
 	font-weight: 700;
 	letter-spacing: -0.003em;
 	@include adaptiv-value("line-height", 67, 34, 1);
-	@include adaptiv-value-to("font-size", 56, 37, 1280);
+	@include adaptiv-value-to("font-size", 56, 37, 1260);
 	@media (max-width: $md0) {
 		@include adaptiv-value("font-size", 56, 32, 0);
 	}
@@ -125,6 +142,7 @@
 	color: #e12828;
 	font-weight: 30;
 	font-size: 16px;
+	@include adaptiv-value-to("font-size", 16, 10.4, 1260);
 	@media (max-width: $md0) {
 		font-size: 14px;
 	}

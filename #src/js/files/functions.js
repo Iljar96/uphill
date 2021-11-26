@@ -157,6 +157,8 @@ if (title) {
 //=================
 //Tabs
 let tabs = document.querySelectorAll("._tabs");
+const stagesBgrImages = document.querySelectorAll('.stages__right-bgr > img');
+
 for (let index = 0; index < tabs.length; index++) {
 	let tab = tabs[index];
 	let tabs_items = tab.querySelectorAll("._tabs-item");
@@ -168,9 +170,15 @@ for (let index = 0; index < tabs.length; index++) {
 				let tabs_item = tabs_items[index];
 				tabs_item.classList.remove('_active');
 				tabs_blocks[index].classList.remove('_active');
+				if (stagesBgrImages.length > 0) {
+					stagesBgrImages[index].classList.remove('_active');
+				}
 			}
 			tabs_item.classList.add('_active');
 			tabs_blocks[index].classList.add('_active');
+			if (stagesBgrImages.length > 0) {
+				stagesBgrImages[index].classList.add('_active');
+			}
 			e.preventDefault();
 		});
 	}

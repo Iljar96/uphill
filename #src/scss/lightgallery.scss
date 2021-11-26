@@ -1,6 +1,8 @@
 .lg-actions .lg-next,
 .lg-actions .lg-prev {
-	background-color: rgba(0, 0, 0, 0.45);
+	background-color: rgba(0, 0, 0, 0.45) !important;
+	background-position: center !important;
+	background-size: 13px 23px !important;
 	border-radius: 2px;
 	color: #999;
 	cursor: pointer;
@@ -8,8 +10,8 @@
 	margin-top: -10px;
 	position: absolute;
 	display: block;
-	width: 20px;
-	height: 36px;
+	width: 40px;
+	height: 40px;
 	top: 50%;
 	transform: translate(0px, -50%);
 	z-index: 1080;
@@ -73,7 +75,9 @@
 	position: absolute;
 	top: 0;
 	width: 100%;
-	background-color: rgba(0, 0, 0, 0.45);
+	@media (max-width: $md2) {
+		background-color: rgba(0, 0, 0, 0.45);
+	}
 }
 .lg-toolbar .lg-icon {
 	color: #999;
@@ -139,10 +143,14 @@
 .lg-prev,
 .lg-next {
 	opacity: 1;
-	-webkit-transition: -webkit-transform 0.35s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.35s cubic-bezier(0, 0, 0.25, 1) 0s, color 0.2s linear;
-	-moz-transition: -moz-transform 0.35s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.35s cubic-bezier(0, 0, 0.25, 1) 0s, color 0.2s linear;
-	-o-transition: -o-transform 0.35s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.35s cubic-bezier(0, 0, 0.25, 1) 0s, color 0.2s linear;
-	transition: transform 0.35s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.35s cubic-bezier(0, 0, 0.25, 1) 0s, color 0.2s linear;
+	-webkit-transition: -webkit-transform 0.35s cubic-bezier(0, 0, 0.25, 1) 0s,
+		opacity 0.35s cubic-bezier(0, 0, 0.25, 1) 0s, color 0.2s linear;
+	-moz-transition: -moz-transform 0.35s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.35s cubic-bezier(0, 0, 0.25, 1) 0s,
+		color 0.2s linear;
+	-o-transition: -o-transform 0.35s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.35s cubic-bezier(0, 0, 0.25, 1) 0s,
+		color 0.2s linear;
+	transition: transform 0.35s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.35s cubic-bezier(0, 0, 0.25, 1) 0s,
+		color 0.2s linear;
 }
 
 .lg-hide-items .lg-prev {
@@ -759,6 +767,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 .lg-outer .lg-item {
 	background: url("../img/icons/loading.gif") no-repeat scroll center center transparent;
+	background-size: 30px;
 	display: none !important;
 }
 .lg-outer.lg-css3 .lg-prev-slide,
