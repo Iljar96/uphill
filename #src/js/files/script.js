@@ -89,7 +89,7 @@ window.onload = function () {
 		map.geoObjects.add(placemark);
 	}
 
-	// ymaps.ready(init);
+	ymaps.ready(init);
 }
 
 const moreBtns = document.querySelectorAll('.documents__more');

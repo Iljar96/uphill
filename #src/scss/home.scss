@@ -455,6 +455,30 @@
 		}
 	}
 }
+#question5 {
+	.questions-quiz__item {
+		height: 105px;
+		display: inline-block;
+		line-height: 105px;
+		padding-top: 0;
+		padding-bottom: 0;
+		@include adaptiv-value-to("height", 105, 69, 1260);
+		@include adaptiv-value-to("line-height", 105, 69, 1260);
+		@media (max-width: $md0) {
+			@include adaptiv-value-to("height", 105, 69, 992);
+			@include adaptiv-value-to("line-height", 105, 69, 992);
+		}
+		@media (max-width: $md3) {
+			height: 80px;
+			line-height: 80px;
+		}
+		> div {
+			display: inline-block;
+			vertical-align: middle;
+			line-height: 1.4;
+		}
+	}
+}
 
 #bar {
 	width: 84%;
@@ -2542,6 +2566,8 @@
 	}
 }
 .quiz__questions {
+	padding-left: 1px;
+	padding-right: 1px;
 	.input {
 		background-color: #ebeef3;
 	}
